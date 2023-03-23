@@ -1,0 +1,244 @@
+@prefix dash:    <http://datashapes.org/dash#> .
+@prefix graphql: <http://datashapes.org/graphql#> .
+@prefix kg:      <http://kg.socialsecurity.be/resource/shapes/> .
+@prefix ont:     <http://kg.socialsecurity.be/ont/dmfa#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix swa:     <http://topbraid.org/swa#> .
+@prefix tosh:    <http://topbraid.org/tosh#> .
+@prefix xs:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+[ rdf:type     sh:ValidationReport ;
+  sh:conforms  false ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:ContributionUnrelatedToNP0 ;
+                 sh:resultMessage              "Invalid Worker Code, code does not exist or is not allowed for ont:UnrelatedWorkerCode." ;
+                 sh:resultPath                 ont:UnrelatedWorkerCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           []  ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:UnrelatedWorkerCodeShape ;
+                 sh:value                      000
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:WorkerRecord3 ;
+                 sh:resultMessage              "Invalid code for ont:ActivityWithRisk, does not exist" ;
+                 sh:resultPath                 ont:ActivityWithRisk ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b0 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:ActivityWithRiskShape ;
+                 sh:value                      999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:Remun3 ;
+                 sh:resultMessage              "Invalid code for ont:RemunCode, does not exist" ;
+                 sh:resultPath                 ont:RemunCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b1 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:RemunCodeShape ;
+                 sh:value                      999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:Occupation2 ;
+                 sh:resultMessage              "Invalid Worker Status, code does not exist" ;
+                 sh:resultPath                 ont:WorkerStatus ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b2 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:WorkerStatusShape ;
+                 sh:value                      "St"
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:EmployerDeclaration0 ;
+                 sh:resultMessage              "Amount declared different from amount calculated" ;
+                 sh:resultPath                 ont:NetOwedAmount ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           []  ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:NetOwedAmountShape ;
+                 sh:value                      00000000009999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:WorkerContribution7 ;
+                 sh:resultMessage              "Invalid ont:WorkerCode, code is out of valid quarter range." ;
+                 sh:resultPath                 ont:ContributionWorkerCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           []  ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:ContributionWorkerCodeShape ;
+                 sh:value                      801
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:WorkerDeduction0 ;
+                 sh:resultMessage              "Invalid code for ont:DeductionCode, does not exist" ;
+                 sh:resultPath                 ont:DeductionCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b3 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:DeductionCodeShape ;
+                 sh:value                      9999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:Remun2 ;
+                 sh:resultMessage              "Invalid code for ont:RemunCode, does not exist" ;
+                 sh:resultPath                 ont:RemunCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b1 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:RemunCodeShape ;
+                 sh:value                      999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:Service1 ;
+                 sh:resultMessage              "Invalid code for ont:ServiceCode, does not exist" ;
+                 sh:resultPath                 ont:ServiceCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b4 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:ServiceCodeShape ;
+                 sh:value                      999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:SecondPillarInformation0 ;
+                 sh:resultMessage              "Invalid Year: must be the same as the declaration's year" ;
+                 sh:resultPath                 ont:ReferenceYearMonth ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           []  ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:ReferenceYearMonthShape ;
+                 sh:value                      "2020-07"
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:WorkerDeduction1 ;
+                 sh:resultMessage              "Invalid code for ont:DeductionCode, does not exist" ;
+                 sh:resultPath                 ont:DeductionCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b3 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:DeductionCodeShape ;
+                 sh:value                      9999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:OccupationPublicServiceData1 ;
+                 sh:resultMessage              "Invalid ont:PublicSectorInstitutionType code, code does not exist" ;
+                 sh:resultPath                 ont:PublicSectorInstitutionType ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b5 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:PublicSectorInstitutionTypeShape ;
+                 sh:value                      99
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:Service3 ;
+                 sh:resultMessage              "Invalid code for ont:ServiceCode, does not exist" ;
+                 sh:resultPath                 ont:ServiceCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b4 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:ServiceCodeShape ;
+                 sh:value                      999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:OccupationDeduction1 ;
+                 sh:resultMessage              "Invalid code for ont:DeductionCode, does not exist" ;
+                 sh:resultPath                 ont:DeductionCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b3 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:DeductionCodeShape ;
+                 sh:value                      9999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:OccupationPublicServiceData2 ;
+                 sh:resultMessage              "Invalid ont:PublicSectorInstitutionType code, code does not exist" ;
+                 sh:resultPath                 ont:PublicSectorInstitutionType ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b5 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:PublicSectorInstitutionTypeShape ;
+                 sh:value                      99
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:WorkerRecord2 ;
+                 sh:resultMessage              "Invalid code for ont:ActivityWithRisk, does not exist" ;
+                 sh:resultPath                 ont:ActivityWithRisk ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b0 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:ActivityWithRiskShape ;
+                 sh:value                      999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:Occupation3 ;
+                 sh:resultMessage              "Invalid Worker Status, code does not exist" ;
+                 sh:resultPath                 ont:WorkerStatus ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b2 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:WorkerStatusShape ;
+                 sh:value                      "St"
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:Occupation3 ;
+                 sh:resultMessage              "Invalid Employment Promotion, code does not exist" ;
+                 sh:resultPath                 ont:EmploymentPromotion ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b6 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:EmploymentPromotionShape ;
+                 sh:value                      0
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:OccupationDeduction0 ;
+                 sh:resultMessage              "Invalid code for ont:DeductionCode, does not exist" ;
+                 sh:resultPath                 ont:DeductionCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b3 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:DeductionCodeShape ;
+                 sh:value                      9999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:WorkerRecord5 ;
+                 sh:resultMessage              "Value must have exactly one of the following 2 shapes but conforms to 0: _:7b9c9a1a5bc2cd5e78e4e682846c77c8, _:84a97ebaf1956532a316483b1ebb194f" ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:XoneConstraintComponent ;
+                 sh:sourceShape                kg:DmfAWorkerRecordShape ;
+                 sh:value                      ont:WorkerRecord5
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:WorkerContribution10 ;
+                 sh:resultMessage              "Invalid Worker Code, code does not exist or is not allowed for this data property." ;
+                 sh:resultPath                 ont:ContributionWorkerCode ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           []  ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:ContributionWorkerCodeShape ;
+                 sh:value                      999
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:OccupationPublicServiceData0 ;
+                 sh:resultMessage              "Invalid ont:PublicSectorInstitutionType code, code does not exist" ;
+                 sh:resultPath                 ont:PublicSectorInstitutionType ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b5 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:PublicSectorInstitutionTypeShape ;
+                 sh:value                      99
+               ] ;
+  sh:result    [ rdf:type                      sh:ValidationResult ;
+                 sh:focusNode                  ont:Occupation2 ;
+                 sh:resultMessage              "Invalid Employment Promotion, code does not exist" ;
+                 sh:resultPath                 ont:EmploymentPromotion ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraint           _:b6 ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                kg:EmploymentPromotionShape ;
+                 sh:value                      0
+               ]
+] .
